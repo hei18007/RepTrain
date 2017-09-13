@@ -48,7 +48,6 @@ public class ErstesFenster extends JFrame
         add(button6);
         add(button7);
         add(button8);
-
     }
 
     public static void main(String[] args) {
