@@ -5,7 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class StringCalcTest
 {
     @Test
-    void emptyStringReturnNull(int act) {
-        assertEquals(0, act);
+    void emptyStringReturnNull() {
+        StringCalc sc = new StringCalc();
+        assertEquals(0, sc.add(""));
     }
 }
