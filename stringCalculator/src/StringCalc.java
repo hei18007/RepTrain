@@ -15,6 +15,7 @@ public class StringCalc
 				result = result + fi.nextInt();
 			}
 		}
+
 		return result;
 	}
 }
