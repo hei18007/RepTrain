@@ -6,25 +6,35 @@ class StringCalcTest
 {
 	@Test void emptyStringReturnsZero()
 	{
-		init(0, "");
+		initStringCalcAndAssertEquals(0, "");
 	}
 
 	@Test void oneStringReturnsOne()
 	{
-		init(1, "1");
+		initStringCalcAndAssertEquals(1, "1");
 	}
 
 	@Test void threeCharacterStringReturnsSum()
 	{
-		init(4, "2,2");
+		initStringCalcAndAssertEquals(10, "5,5");
+	}
+
+	@Test void fourOrMoreCharacterStringReturnsSum()
+	{
+		initStringCalcAndAssertEquals(20,"3,3,3,5,6");
+	}
+
+	@Test void handleNewLineBetweenNumbersReturnsSum()
+	{
+		initStringCalcAndAssertEquals(6,"1\n2,3");
 	}
 
 	@Test void nullStringReturnsZero()
 	{
-		init(0, null);
+		initStringCalcAndAssertEquals(0, null);
 	}
 
-	private void init(int expected, String actual)
+	private void initStringCalcAndAssertEquals(int expected, String actual)
 	{
 		StringCalc sc = new StringCalc();
 		assertEquals(expected, sc.add(actual));
